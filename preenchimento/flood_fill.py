@@ -35,7 +35,7 @@ def circunferencia_bresenham(xc, yc, r, cor=(0, 0, 0)):
             p = p + 2*x + 3
             x += 1
             
-def linha_bresenham(x1, y1, x2, y2, cor=(0, 0, 0)):  # CORRIGIDO: adicionado parâmetro cor
+def linha_bresenham(x1, y1, x2, y2, cor=(0, 0, 0)):
     dx = x2 - x1
     dy = y2 - y1
     
