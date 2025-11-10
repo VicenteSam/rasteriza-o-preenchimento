@@ -8,31 +8,26 @@ pygame.init()
 tela = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Método Bresenham")
 
-def calcular_reta(x1, y1, x2, y2):
-    dx = x2 - x1
-    dy = y2 - y1
+def calcular_reta(x1, y1, x2, y2):    
+    swap_y = False
+    if y2 < y1:
+        y1, y2 = -y1, -y2
+        swap_y = True
+    
+    swap_xy = False
+    if abs(y2 - y1) > abs(x2 - x1):
+        x1, y1 = y1, x1
+        x2, y2 = y2, x2
+        swap_xy = True
     
     if x2 < x1:
         x1, x2 = x2, x1
         y1, y2 = y2, y1
     
-    swap_y = False
-    if y2 < y1:
-        y1 = -y1
-        y2 = -y2
-        swap_y = True
-
-    swap_xy = False
-    if abs(dy) > abs(dx):
-        x1, y1 = y1, x1
-        x2, y2 = y2, x2
-        dx, dy = dy, dx
-        swap_xy = True
-        
-    dx = x2 - x1
     dy = y2 - y1
+    dx = x2 - x1
     y = y1
-    p = 2*dy-dx
+    p = 2 * dy - dx
         
     for x in range(x1, x2+1):
         if swap_xy:
