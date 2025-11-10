@@ -1,7 +1,7 @@
 import pygame
 import time
 
-WIDTH, HEIGHT = 1000, 1000
+WIDTH, HEIGHT = 400, 400
 PIXEL_SIZE = 20
 
 pygame.init()
@@ -9,20 +9,20 @@ tela = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Método Bresenham")
 
 def calcular_reta(x1, y1, x2, y2):    
+    if x2 < x1:
+        x1, x2 = x2, x1
+        y1, y2 = y2, y1
+        
     swap_y = False
     if y2 < y1:
         y1, y2 = -y1, -y2
         swap_y = True
     
     swap_xy = False
-    if abs(y2 - y1) > abs(x2 - x1):
+    if abs(y2-y1) > abs(x2-x1):
         x1, y1 = y1, x1
         x2, y2 = y2, x2
         swap_xy = True
-    
-    if x2 < x1:
-        x1, x2 = x2, x1
-        y1, y2 = y2, y1
     
     dy = y2 - y1
     dx = x2 - x1
@@ -48,7 +48,7 @@ def calcular_reta(x1, y1, x2, y2):
         else:
             p = p + 2*dy
             
-def draw_pixel(x, y, cor=(0, 0, 0)):
+"""def draw_pixel(x, y, cor=(0, 0, 0)):
     cartesian_y = (HEIGHT // PIXEL_SIZE) - 1 - y
     pygame.draw.rect(tela, cor, (x * PIXEL_SIZE, cartesian_y * PIXEL_SIZE, PIXEL_SIZE, PIXEL_SIZE))
     pygame.display.update()
@@ -74,9 +74,9 @@ def draw_grid():
     pygame.draw.line(tela, (150, 150, 150), (0, HEIGHT - PIXEL_SIZE), (WIDTH, HEIGHT - PIXEL_SIZE), 2)
     pygame.draw.line(tela, (150, 150, 150), (PIXEL_SIZE, 0), (PIXEL_SIZE, HEIGHT), 2)
     
-    pygame.display.update()
+    pygame.display.update()"""
         
-"""def draw_pixel(x, y, cor=(0,0,0)):
+def draw_pixel(x, y, cor=(0,0,0)):
     center_x = WIDTH // 2
     center_y = HEIGHT // 2
     
@@ -117,7 +117,7 @@ def draw_grid():
     text = font.render("0", True, (255, 0, 0))
     tela.blit(text, (center_x + 5, center_y + 5))
     
-    pygame.display.update()"""
+    pygame.display.update()
 
 if __name__ == '__main__':
     rodando = True
@@ -125,8 +125,8 @@ if __name__ == '__main__':
     draw_grid()
   
     start = time.time()
-    for i in range(10): 
-        calcular_reta(1, 1, 49, 49)
+    for i in range(1): 
+        calcular_reta(-5,-5,8,-4)
     
     tempo_medio = (time.time() - start)/10
     print(tempo_medio)
