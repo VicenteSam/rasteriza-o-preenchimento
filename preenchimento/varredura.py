@@ -81,7 +81,7 @@ def linha_bresenham(x1, y1, x2, y2, cor=(0, 0, 0)):
         else:
             p = p + 2*dy
 
-def calcular_tabela_arestas(pontos):
+def algoritmo_varredura(pontos, cor_preenchimento=(255, 0, 0)):
     tabela_arestas = []
     
     for i in range(len(pontos)):
@@ -102,11 +102,6 @@ def calcular_tabela_arestas(pontos):
     
         dx_dy = (x2 - x1) / (y2 - y1)
         tabela_arestas.append([y_min, y_max, x_y_min, dx_dy])
-    
-    return tabela_arestas
-
-def algoritmo_varredura(pontos, cor_preenchimento=(255, 0, 0)):
-    tabela_arestas = calcular_tabela_arestas(pontos)
  
     y_min = min(aresta[0] for aresta in tabela_arestas)
     y_max = max(aresta[1] for aresta in tabela_arestas)
