@@ -1,6 +1,5 @@
 import time
 import pygame
-import math  # Adicionado
 
 WIDTH, HEIGHT = 1000, 1000
 PIXEL_SIZE = 20
