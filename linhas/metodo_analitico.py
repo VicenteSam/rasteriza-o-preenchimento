@@ -61,7 +61,7 @@ if __name__ == '__main__':
     memoria_antes = process.memory_info().rss / 1024 / 1024
     
     start = time.time()
-    for i in range(10):
+    for i in range(1):
         calcular_reta(1, 1, 49, 49)
     
     tempo_medio = (time.time() - start)/10
