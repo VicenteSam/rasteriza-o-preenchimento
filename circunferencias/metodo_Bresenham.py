@@ -79,7 +79,7 @@ if __name__ == '__main__':
     total_pixels = 0
     
     start = time.time()
-    for i in range(10):
+    for i in range(1):
         iteracoes, pixels = calcular_circunferencia(25,25,24)
         total_iteracoes += iteracoes
         total_pixels += pixels
