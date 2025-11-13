@@ -58,7 +58,7 @@ if __name__ == '__main__':
     draw_grid()
     
     start = time.time()
-    for i in range(10):
+    for i in range(1):
         calcular_reta(1, 1, 49, 49)
         
     tempo_medio = (time.time() - start)/10
