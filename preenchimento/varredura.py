@@ -2,8 +2,8 @@ import time
 import pygame
 import math
 
-WIDTH, HEIGHT = 1000, 1000
-PIXEL_SIZE = 20
+WIDTH, HEIGHT = 500, 500
+PIXEL_SIZE = 2
 
 pygame.init()
 tela = pygame.display.set_mode((WIDTH, HEIGHT))
@@ -207,8 +207,8 @@ if __name__ == '__main__':
         opcao = mostrar_menu()
         
         if opcao == 1:
-            x1,y1 = 3,10
-            x2,y2 = 40,25
+            x1,y1 = 50,100
+            x2,y2 = 200,175
             
             pontos_retangulo = [(x1, y1), (x2, y1), (x2, y2), (x1, y2)]
             
@@ -231,7 +231,7 @@ if __name__ == '__main__':
                     print("Raio deve ser entre 5 e 15!")
                     continue
                     
-                centro_x, centro_y = 25, 25
+                centro_x, centro_y = 90, 50
                 
                 circunferencia_bresenham(centro_x, centro_y, raio, (0, 0, 255))
                 pygame.time.wait(100)
@@ -245,7 +245,14 @@ if __name__ == '__main__':
                 print("Raio inválido!")
                 
         elif opcao == 3:
-            pontos_poligono = [(15,15),(40,20),(42,27),(22,42),(10,30),(18,25)]
+            pontos_poligono = [
+                    (50, 50),
+                    (200, 80),
+                    (210, 135),
+                    (110, 210),
+                    (40, 150),
+                    (90, 125)
+                ]
             
             for i in range(len(pontos_poligono)):
                 x1, y1 = pontos_poligono[i]
@@ -260,7 +267,20 @@ if __name__ == '__main__':
             print(end_time - start_time)
             
         elif opcao == 4:
-            pontos_poligono = [(15,15),(7,23),(15,31),(23,23),(27,27),(31,23),(39,31),(47,23),(39,15),(31,23),(27,19),(23,23)]
+            pontos_poligono = [
+        (75, 75),
+        (35, 115), 
+        (75, 155),
+        (115, 115),
+        (135, 135),
+        (155, 115),
+        (195, 155),
+        (235, 115),
+        (195, 75),
+        (155, 115),
+        (135, 95),
+        (115, 115)
+    ]
             
             for i in range(len(pontos_poligono)):
                 x1, y1 = pontos_poligono[i]
