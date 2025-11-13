@@ -211,7 +211,7 @@ if __name__ == '__main__':
             pygame.time.wait(100)
             
             start_time = time.time()
-            flood_fill(25, 25, (200, 200, 200), (255, 0, 255))
+            flood_fill(27, 23, (200, 200, 200), (255, 0, 255))
             tempo = time.time() - start_time
             print(tempo)
             
